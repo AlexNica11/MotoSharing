@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="530.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.PlaceOrder">
+   <children>
+      <Label layoutX="165.0" layoutY="39.0" text="Place Order">
+         <font>
+            <Font name="AppleMyungjo Regular" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="142.0" text="Type">
+         <font>
+            <Font name="AppleMyungjo Regular" size="24.0" />
+         </font></Label>
+      <Label layoutX="43.0" layoutY="242.0" text="Quantity ">
+         <font>
+            <Font name="AppleMyungjo Regular" size="24.0" />
+         </font></Label>
+      <Label layoutX="41.0" layoutY="340.0" text="Time">
+         <font>
+            <Font name="AppleMyungjo Regular" size="24.0" />
+         </font></Label>
+      <ScrollBar layoutX="124.0" layoutY="132.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="188.0" />
+      <ScrollBar layoutX="178.0" layoutY="232.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="54.0" />
+      <ScrollBar layoutX="124.0" layoutY="330.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="54.0" />
+      <Button layoutX="265.0" layoutY="444.0" mnemonicParsing="false" text="Check Availability">
+         <font>
+            <Font name="AppleMyungjo Regular" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="77.0" layoutY="444.0" mnemonicParsing="false" text="Back">
+         <font>
+            <Font name="AppleMyungjo Regular" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

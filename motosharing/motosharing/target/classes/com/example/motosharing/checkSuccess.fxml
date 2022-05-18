@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="530.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.CheckSuccess">
+   <children>
+      <Label layoutX="20.0" layoutY="182.0" prefHeight="126.0" prefWidth="470.0" text=" The bikes you ordered are available">
+         <font>
+            <Font name="AppleMyungjo Regular" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="142.0" layoutY="119.0" text="SUCCESS!">
+         <font>
+            <Font name="AppleMyungjo Regular" size="46.0" />
+         </font>
+      </Label>
+      <Button layoutX="63.0" layoutY="423.0" mnemonicParsing="false" text="Back to order">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="314.0" layoutY="423.0" mnemonicParsing="false" text="Checkout">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

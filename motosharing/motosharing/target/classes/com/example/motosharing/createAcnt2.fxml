@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="530.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.CreateAcnt2">
+   <children>
+      <Label layoutX="97.0" layoutY="53.0" text="CREATE ACCOUNT " underline="true">
+         <font>
+            <Font name="AppleMyungjo Regular" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="130.0" text="Username">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Label>
+      <TextField layoutX="149.0" layoutY="132.0" prefHeight="26.0" prefWidth="213.0" />
+      <Label layoutX="40.0" layoutY="190.0" text="Password ">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Label>
+      <TextField layoutX="149.0" layoutY="192.0" prefHeight="26.0" prefWidth="213.0" />
+      <Label layoutX="40.0" layoutY="251.0" text="Verify Password">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Label>
+      <TextField layoutX="210.0" layoutY="253.0" prefHeight="26.0" prefWidth="213.0" />
+      <Button layoutX="384.0" layoutY="436.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="91.0" text="Finish ">
+         <font>
+            <Font name="AppleMyungjo Regular" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="530.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.FinalizeOrder">
+   <children>
+      <Button layoutX="369.0" layoutY="437.0" mnemonicParsing="false" text="Approve">
+         <font>
+            <Font name="AppleMyungjo Regular" size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="65.0" layoutY="150.0" text="Price">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="278.0" text="Reservation number">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Label>
+      <Button layoutX="62.0" layoutY="437.0" mnemonicParsing="false" text="Back">
+         <font>
+            <Font name="AppleMyungjo Regular" size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="135.0" layoutY="60.0" text="Finalize Order">
+         <font>
+            <Font name="AppleMyungjo Regular" size="37.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="96.0" layoutY="182.0" prefHeight="75.0" prefWidth="191.0" />
+      <TextArea layoutX="96.0" layoutY="328.0" prefHeight="75.0" prefWidth="191.0" />
+   </children>
+</AnchorPane>
