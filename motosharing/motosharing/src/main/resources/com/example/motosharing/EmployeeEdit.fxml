@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.controllers.EmployeeEditController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="262.0" layoutY="14.0" prefHeight="58.0" prefWidth="76.0" text="Edit" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="52.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleBikeInfo" text="Bike Inforamtion" />
+      <Button layoutX="52.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleReservations" text="Reservations" />
+      <Button layoutX="52.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleNrOfBikes" text="Number of bikes" />
+      <Button fx:id="locations" layoutX="52.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleLocations" text="Locations" />
+      <Button fx:id="employeeDetails" layoutX="52.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleEmployeeDetails" text="Employee Details" />
+   </children>
+</AnchorPane>
