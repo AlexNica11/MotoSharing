@@ -12,7 +12,7 @@
             <Font name="AppleMyungjo Regular" size="72.0" />
          </font>
       </Label>
-      <Button layoutX="154.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="37.0" prefWidth="93.0" text="LOGIN ">
+      <Button layoutX="154.0" layoutY="443.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="37.0" prefWidth="93.0" text="LOG IN ">
          <font>
             <Font name="AppleMyungjo Regular" size="18.0" />
          </font></Button>

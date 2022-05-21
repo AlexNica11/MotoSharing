@@ -1,10 +1,8 @@
 package com.example.motosharing;
 
-import com.example.motosharing.controllers.CreateAccountController;
-import com.example.motosharing.controllers.FirstScreenController;
-import com.example.motosharing.controllers.LoginController;
-import com.example.motosharing.controllers.RootLayoutController;
+import com.example.motosharing.controllers.*;
 import com.example.motosharing.users.Customer;
+import com.example.motosharing.users.Employee;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,6 +23,7 @@ public class MainApp extends Application {
     private BorderPane rootLayout;
 
     private ObservableList<Customer> customerData= FXCollections.observableArrayList();
+    private ObservableList<Employee> employeeData= FXCollections.observableArrayList();
 
     public MainApp(){
         customerData.add(new Customer("u1", "p1"));
@@ -34,6 +33,14 @@ public class MainApp extends Application {
         customerData.add(new Customer("u5", "p5"));
         customerData.add(new Customer("u6", "p6"));
         customerData.add(new Customer("user - sheesh", "p6"));
+
+
+        employeeData.add(new Employee("e1", "p1", "employee", "pp1"));
+        employeeData.add(new Employee("e2", "p2", "manager", "pp2"));
+        employeeData.add(new Employee("e3", "p3", "employee", "pp3"));
+        employeeData.add(new Employee("e4", "p4", "employee", "pp4"));
+        employeeData.add(new Employee("e5", "p5", "employee", "pp5"));
+        employeeData.add(new Employee("e6", "p6", "manager", "pp6"));
     }
 
     public void start(Stage primaryStage){
@@ -111,12 +118,35 @@ public class MainApp extends Application {
         }
     }
 
+    public void showEmployeeEdit(){
+        try {
+            FXMLLoader loader= new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("EmployeeEdit.fxml"));
+            AnchorPane employeeEditScreen=loader.load();
+
+            rootLayout.setCenter(employeeEditScreen);
+
+            EmployeeEditController controller= loader.getController();
+            controller.setMainApp(this);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
     public ObservableList<Customer> getCustomerData(){
         return customerData;
     }
 
     public void addNewCustomer(Customer customer){
         customerData.add(customer);
+    }
+    public ObservableList<Employee> getEmployeeData(){
+        return employeeData;
+    }
+
+    public void addNewEmployee(Employee employee){
+        employeeData.add(employee);
     }
 
     public Stage getPrimaryStage(){

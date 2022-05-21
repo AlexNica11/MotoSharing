@@ -1,9 +1,7 @@
 package com.example.motosharing.users;
 
-public class Customer {
+public class Customer extends User{
     private String email;
-    private String password;
-    private String name;
     private String dateOfBirth;
     private int creditCard;
     private String cardOwner;
@@ -30,20 +28,6 @@ public class Customer {
     }
     public String getEmail(){
         return email;
-    }
-
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name=name;
-    }
-
-    public String getPassword(){
-        return password;
-    }
-    public void setPassword(String password){
-        this.password=password;
     }
 
     public String getDateOfBirth(){
