@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="530.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.Login">
+<AnchorPane prefHeight="530.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.controllers.LoginController">
    <children>
-      <Label layoutX="159.0" layoutY="40.0" text="LOGIN" underline="true">
+      <Label layoutX="177.0" layoutY="39.0" text="LOGIN" underline="true">
          <font>
             <Font name="AppleMyungjo Regular" size="53.0" />
          </font>
@@ -21,12 +21,12 @@
             <Font name="AppleMyungjo Regular" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="351.0" layoutY="415.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="98.0" text="Verify">
+      <Button layoutX="351.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleVerify" prefHeight="46.0" prefWidth="98.0" text="Verify">
          <font>
             <Font name="AppleMyungjo Regular" size="18.0" />
          </font>
       </Button>
-      <TextField layoutX="212.0" layoutY="155.0" prefHeight="27.0" prefWidth="254.0" />
-      <TextField layoutX="133.0" layoutY="228.0" prefHeight="27.0" prefWidth="186.0" />
+      <TextField fx:id="usernameField" layoutX="212.0" layoutY="155.0" prefHeight="27.0" prefWidth="254.0" promptText="Username/E-mail" />
+      <TextField fx:id="passwordField" layoutX="133.0" layoutY="228.0" prefHeight="27.0" prefWidth="186.0" promptText="Password" />
    </children>
 </AnchorPane>
