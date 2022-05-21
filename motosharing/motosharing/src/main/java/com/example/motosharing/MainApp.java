@@ -33,6 +33,7 @@ public class MainApp extends Application {
         customerData.add(new Customer("u4", "p4"));
         customerData.add(new Customer("u5", "p5"));
         customerData.add(new Customer("u6", "p6"));
+        customerData.add(new Customer("user - sheesh", "p6"));
     }
 
     public void start(Stage primaryStage){
