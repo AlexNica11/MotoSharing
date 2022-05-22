@@ -35,11 +35,5 @@
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font></Label>
-      <CheckBox layoutX="237.0" layoutY="101.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="172.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="248.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="318.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="394.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" />
-      <CheckBox layoutX="237.0" layoutY="464.0" mnemonicParsing="false" />
    </children>
 </AnchorPane>

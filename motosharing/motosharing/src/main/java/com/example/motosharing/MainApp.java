@@ -182,6 +182,21 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    public void showOrderBikesScreen(){
+        try {
+            FXMLLoader loader= new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("placeOrder.fxml"));
+            Pane OrderBikedScreen=loader.load();
+
+            rootLayout.setCenter(OrderBikedScreen);
+
+            SelectLocationController controller= loader.getController();
+            controller.setMainApp(this);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     public ObservableList<Data> getCustomerData(){
         return customerData;
