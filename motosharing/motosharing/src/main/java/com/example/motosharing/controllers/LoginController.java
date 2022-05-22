@@ -1,6 +1,7 @@
 package com.example.motosharing.controllers;
 
 import com.example.motosharing.MainApp;
+import com.example.motosharing.data.Data;
 import com.example.motosharing.users.Customer;
 import com.example.motosharing.users.Employee;
 import com.example.motosharing.users.User;
@@ -18,8 +19,8 @@ public class LoginController extends MainAppController{
     @FXML
     private TextField employeePassword;
 
-    private ObservableList<Customer> customerData;
-    private ObservableList<Employee> employeeData;
+    private ObservableList<Data> customerData;
+    private ObservableList<Data> employeeData;
 
     @FXML
     private void initialize(){
@@ -44,19 +45,19 @@ public class LoginController extends MainAppController{
         boolean login=false;
 
 
-        for(Customer customer : customerData){
-
-            if(customer.getName().equals(username) && customer.getPassword().equals(password)){
+        for(Data customer : customerData){
+            Customer customer1= (Customer) customer;
+            if(customer1.getName().equals(username) && customer1.getPassword().equals(password)){
                 login=true;
-                user=customer;
+                user=customer1;
             }
         }
 
-        for(Employee employee : employeeData){
-
-            if(employee.getName().equals(username) && employee.getPassword().equals(password)){
+        for(Data employee : employeeData){
+            Employee employee1= (Employee) employee;
+            if(employee1.getName().equals(username) && employee1.getPassword().equals(password)){
                 login=true;
-                user=employee;
+                user=employee1;
             }
         }
 
