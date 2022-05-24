@@ -1,11 +1,12 @@
 package com.example.motosharing.users;
 
 import com.example.motosharing.data.Data;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
 
 public class User extends Data {
     protected StringProperty name;
-    protected StringProperty password;
+    protected IntegerProperty password;
 
     public String getName(){
         return name.getValue();
@@ -17,10 +18,10 @@ public class User extends Data {
         return name;
     }
 
-    public String getPassword(){
+    public Integer getPassword(){
         return password.getValue();
     }
-    public void setPassword(String password){
+    public void setPassword(Integer password){
         this.password.set(password);
     }
 }

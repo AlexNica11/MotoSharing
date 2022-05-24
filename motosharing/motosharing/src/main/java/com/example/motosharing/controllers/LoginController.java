@@ -8,6 +8,7 @@ import com.example.motosharing.users.User;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LoginController extends MainAppController{
@@ -15,9 +16,9 @@ public class LoginController extends MainAppController{
     @FXML
     private TextField usernameField;
     @FXML
-    private TextField passwordField;
+    private PasswordField passwordField;
     @FXML
-    private TextField employeePassword;
+    private PasswordField employeePassword;
 
     private ObservableList<Data> customerData;
     private ObservableList<Data> employeeData;
@@ -51,7 +52,7 @@ public class LoginController extends MainAppController{
 
         for(Data customer : customerData){
             Customer customer1= (Customer) customer;
-            if(customer1.getName().equals(username) && customer1.getPassword().equals(password)){
+            if(customer1.getName().equals(username) && customer1.getPassword()==password.hashCode()){
                 login=true;
                 user=customer1;
             }
@@ -59,7 +60,7 @@ public class LoginController extends MainAppController{
 
         for(Data employee : employeeData){
             Employee employee1= (Employee) employee;
-            if(employee1.getName().equals(username) && employee1.getPassword().equals(password)){
+            if(employee1.getName().equals(username) && employee1.getPassword()==password.hashCode()){
                 login=true;
                 user=employee1;
             }
@@ -72,14 +73,14 @@ public class LoginController extends MainAppController{
         if(employeePassword.isVisible()) {
             if(employeePassword.getText()==null || employeePassword.getText().trim().length()==0)
                 errorMessage+="Employee password field is empty.\n";
-            if (((Employee) user).getEmployeePassword().equals(employeePassword.getText()) == false)
+            else
+            if (((Employee) user).getEmployeePassword()!=employeePassword.getText().hashCode())
                 errorMessage += "Employee password is not correct.\n";
             else {
                 mainApp.setUser(user);
                 mainApp.showEmployeeEdit();
             }
         }
-
 
         if(login){
             if(user instanceof Employee){

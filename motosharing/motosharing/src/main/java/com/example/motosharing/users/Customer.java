@@ -1,5 +1,6 @@
 package com.example.motosharing.users;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -16,9 +17,9 @@ public class Customer extends User{
         this(null, null);
     }
 
-    public Customer(String username, String password){
+    public Customer(String username, Integer password){
         name= new SimpleStringProperty(username);
-        this.password= new SimpleStringProperty(password);
+        this.password= new SimpleIntegerProperty(password);
         email= new SimpleStringProperty("email");
         dateOfBirth="date";
         creditCard=1112111;

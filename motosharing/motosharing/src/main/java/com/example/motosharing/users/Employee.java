@@ -1,22 +1,24 @@
 package com.example.motosharing.users;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Employee extends User{
     private StringProperty rank;
 
-    private StringProperty employeePassword;
+    private IntegerProperty employeePassword;
 
     public Employee(){
         this(null, null, null, null);
     }
 
-    public Employee(String name, String password, String rank, String employeePassword){
+    public Employee(String name, Integer password, String rank, Integer employeePassword){
         this.name= new SimpleStringProperty(name);
-        this.password= new SimpleStringProperty(password);
+        this.password= new SimpleIntegerProperty(password);
         this.rank= new SimpleStringProperty(rank);
-        this.employeePassword= new SimpleStringProperty(employeePassword);
+        this.employeePassword= new SimpleIntegerProperty(employeePassword);
     }
 
     public String getRank(){
@@ -29,7 +31,7 @@ public class Employee extends User{
         return rank;
     }
 
-    public String getEmployeePassword(){
+    public Integer getEmployeePassword(){
         return employeePassword.getValue();
     }
 }

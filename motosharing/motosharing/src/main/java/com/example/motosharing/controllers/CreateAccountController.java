@@ -71,6 +71,10 @@ public class CreateAccountController extends MainAppController{
     }
 
     @FXML
+    private void handleBack(){
+        mainApp.showFirstScreen();
+    }
+    @FXML
     public void handleContinue(){
         String errorMessage="";
         if(nameField.getText()==null || nameField.getText().trim().length()==0){
@@ -121,7 +125,7 @@ public class CreateAccountController extends MainAppController{
 
             alert.showAndWait();
         }else {
-            Customer customer = new Customer(nameField.getText(), passwordField.getText());
+            Customer customer = new Customer(nameField.getText(), passwordField.getText().hashCode());
             customer.setEmail(emailField.getText());
             customer.setDateOfBirth(birthDay.getValue() + "." + birthMonth.getValue() + "." + birthYear);
             customer.setCreditCard(Integer.parseInt(creditCardField.getText()));

@@ -36,13 +36,13 @@ public class MainApp extends Application {
     private ObservableList<Data> bikes=FXCollections.observableArrayList();
 
     public MainApp(){
-        Customer customer1= new Customer("u1", "p1");
-        Customer customer2= new Customer("u2", "p2");
-        Customer customer3= new Customer("u3", "p3");
-        Customer customer4= new Customer("u4", "p4");
-        Customer customer5= new Customer("u5", "p5");
-        Customer customer6= new Customer("u6", "p6");
-        Customer customer7= new Customer("user - sheesh", "p6");
+        Customer customer1= new Customer("u1", "p1".hashCode());
+        Customer customer2= new Customer("u2", "p2".hashCode());
+        Customer customer3= new Customer("u3", "p3".hashCode());
+        Customer customer4= new Customer("u4", "p4".hashCode());
+        Customer customer5= new Customer("u5", "p5".hashCode());
+        Customer customer6= new Customer("u6", "p6".hashCode());
+        Customer customer7= new Customer("user - sheesh", "p6".hashCode());
         customer1.setReview("review1");
         customer2.setReview("review2");
         customer3.setReview("review3");
@@ -57,12 +57,12 @@ public class MainApp extends Application {
         customerData.add(customer6);
         customerData.add(customer7);
 
-        employeeData.add(new Employee("e1", "p1", "employee", "pp1"));
-        employeeData.add(new Employee("e2", "p2", "manager", "pp2"));
-        employeeData.add(new Employee("e3", "p3", "employee", "pp3"));
-        employeeData.add(new Employee("e4", "p4", "employee", "pp4"));
-        employeeData.add(new Employee("e5", "p5", "employee", "pp5"));
-        employeeData.add(new Employee("e6", "p6", "manager", "pp6"));
+        employeeData.add(new Employee("e1", "p1".hashCode(), "employee", "pp1".hashCode()));
+        employeeData.add(new Employee("e2", "p2".hashCode(), "manager", "pp2".hashCode()));
+        employeeData.add(new Employee("e3", "p3".hashCode(), "employee", "pp3".hashCode()));
+        employeeData.add(new Employee("e4", "p4".hashCode(), "employee", "pp4".hashCode()));
+        employeeData.add(new Employee("e5", "p5".hashCode(), "employee", "pp5".hashCode()));
+        employeeData.add(new Employee("e6", "p6".hashCode(), "manager", "pp6".hashCode()));
 
         locations.add(new Locations("c1", "s1", "sn1"));
         locations.add(new Locations("c2", "s2", "sn2"));
