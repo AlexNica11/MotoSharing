@@ -182,15 +182,15 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
-    public void showOrderBikesScreen(){
+    public void showPlaceOrderScreen(){
         try {
             FXMLLoader loader= new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("placeOrder.fxml"));
-            Pane OrderBikedScreen=loader.load();
+            Pane orderBikesScreen=loader.load();
 
-            rootLayout.setCenter(OrderBikedScreen);
+            rootLayout.setCenter(orderBikesScreen);
 
-            SelectLocationController controller= loader.getController();
+            OrderBikesController controller= loader.getController();
             controller.setMainApp(this);
 
         }catch (IOException e){
