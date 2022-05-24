@@ -197,6 +197,36 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    public void showRateExperienceScreen(){
+        try {
+            FXMLLoader loader= new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("rateExperience.fxml"));
+            Pane RateExperienceScreen=loader.load();
+
+            rootLayout.setCenter(RateExperienceScreen);
+
+            RateExperienceController controller= loader.getController();
+            controller.setMainApp(this);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void showGoodbyeScreen(){
+        try {
+            FXMLLoader loader= new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("goodbye.fxml"));
+            Pane GoodbyeScreen=loader.load();
+
+            rootLayout.setCenter(GoodbyeScreen);
+
+            GoodbyeController controller= loader.getController();
+            controller.setMainApp(this);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     public ObservableList<Data> getCustomerData(){
         return customerData;
