@@ -5,21 +5,21 @@ import javafx.fxml.FXML;
 public class SelectLocationController extends MainAppController
 {
     @FXML
-    private void handleTimisoara() { mainApp.showOrderBikesScreen(); }
+    private void handleTimisoara() { mainApp.showPlaceOrderScreen(); }
 
     @FXML
-    private void handleIasi() {mainApp.showOrderBikesScreen(); }
+    private void handleIasi() {mainApp.showPlaceOrderScreen(); }
 
     @FXML
-    private void handldeClujNapoca() { mainApp.showOrderBikesScreen(); }
+    private void handleClujNapoca() { mainApp.showPlaceOrderScreen(); }
 
     @FXML
-    private void handldeBucharest() { mainApp.showOrderBikesScreen(); }
+    private void handleBucharest() { mainApp.showPlaceOrderScreen(); }
 
     @FXML
-    private void handldeBrasov() { mainApp.showOrderBikesScreen(); }
+    private void handleBrasov() { mainApp.showPlaceOrderScreen(); }
 
     @FXML
-    private void handleConstanta() { mainApp.showOrderBikesScreen(); }
+    private void handleConstanta() { mainApp.showPlaceOrderScreen(); }
 
 }

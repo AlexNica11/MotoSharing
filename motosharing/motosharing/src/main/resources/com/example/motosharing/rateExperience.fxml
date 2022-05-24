@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="530.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.RateExperience">
+   <children>
+      <Label layoutX="56.0" layoutY="75.0" prefHeight="109.0" prefWidth="432.0" text="Please rate your experience ">
+         <font>
+            <Font name="AppleMyungjo Regular" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="257.0" text="Rating (1-5) ">
+         <font>
+            <Font name="AppleMyungjo Regular" size="26.0" />
+         </font>
+      </Label>
+      <TextField layoutX="224.0" layoutY="257.0" prefHeight="37.0" prefWidth="62.0" />
+      <Button layoutX="388.0" layoutY="437.0" mnemonicParsing="false" text="Finish">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
