@@ -10,7 +10,7 @@ public class Bike extends Data{
     private StringProperty engineSize;
     private Locations location;
 
-    private Bike(){
+    public Bike(){
         this(null, null, null, null);
     }
     public Bike(String manufacturer, String model, String color, String engineSize){

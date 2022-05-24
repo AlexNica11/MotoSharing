@@ -6,7 +6,9 @@ import com.example.motosharing.data.Data;
 import com.example.motosharing.data.Locations;
 import com.example.motosharing.users.Customer;
 import com.example.motosharing.users.Employee;
+import com.example.motosharing.users.User;
 import javafx.application.Application;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,20 +28,34 @@ public class MainApp extends Application {
 
     private BorderPane rootLayout;
 
+
+    private User user;
     private ObservableList<Data> customerData= FXCollections.observableArrayList();
     private ObservableList<Data> employeeData= FXCollections.observableArrayList();
     private ObservableList<Data> locations=FXCollections.observableArrayList();
     private ObservableList<Data> bikes=FXCollections.observableArrayList();
 
     public MainApp(){
-        customerData.add(new Customer("u1", "p1"));
-        customerData.add(new Customer("u2", "p2"));
-        customerData.add(new Customer("u3", "p3"));
-        customerData.add(new Customer("u4", "p4"));
-        customerData.add(new Customer("u5", "p5"));
-        customerData.add(new Customer("u6", "p6"));
-        customerData.add(new Customer("user - sheesh", "p6"));
+        Customer customer1= new Customer("u1", "p1");
+        Customer customer2= new Customer("u2", "p2");
+        Customer customer3= new Customer("u3", "p3");
+        Customer customer4= new Customer("u4", "p4");
+        Customer customer5= new Customer("u5", "p5");
+        Customer customer6= new Customer("u6", "p6");
+        Customer customer7= new Customer("user - sheesh", "p6");
+        customer1.setReview("review1");
+        customer2.setReview("review2");
+        customer3.setReview("review3");
+        customer4.setReview("review4");
+        customer5.setReview("review5");
 
+        customerData.add(customer1);
+        customerData.add(customer2);
+        customerData.add(customer3);
+        customerData.add(customer4);
+        customerData.add(customer5);
+        customerData.add(customer6);
+        customerData.add(customer7);
 
         employeeData.add(new Employee("e1", "p1", "employee", "pp1"));
         employeeData.add(new Employee("e2", "p2", "manager", "pp2"));
@@ -70,9 +87,7 @@ public class MainApp extends Application {
             loc1.addBike(b4);
             loc1.addBike(b5);
 
-            for(Bike bike : loc1.getBikeList()){
-                bikes.add(bike);
-            }
+            bikes.addAll(loc1.getBikeList());
         }
     }
 
@@ -161,6 +176,7 @@ public class MainApp extends Application {
 
             EmployeeEditController controller= loader.getController();
             controller.setMainApp(this);
+            controller.setUser();
 
         }catch (IOException e){
             e.printStackTrace();
@@ -180,6 +196,32 @@ public class MainApp extends Application {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public boolean showEditDialog(Data data, String option){
+        try{
+            FXMLLoader loader= new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("EditDialog.fxml"));
+            AnchorPane page= (AnchorPane) loader.load();
+
+            Stage dialogStage= new Stage();
+            dialogStage.setTitle("Edit");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene= new Scene(page);
+            dialogStage.setScene(scene);
+
+            EditDialogController controller= loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setData(data, option);
+
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        }catch (IOException e){
+            e.printStackTrace();
+            return false;
         }
     }
 
@@ -207,6 +249,12 @@ public class MainApp extends Application {
 
     public Stage getPrimaryStage(){
         return primaryStage;
+    }
+    public void setUser(User user){
+        this.user= user;
+    }
+    public User getUser(){
+        return user;
     }
 
     public static void main(String[] args) {

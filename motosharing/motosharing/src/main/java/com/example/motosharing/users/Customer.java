@@ -1,14 +1,16 @@
 package com.example.motosharing.users;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Customer extends User{
-    private String email;
+    private StringProperty email;
     private String dateOfBirth;
     private int creditCard;
     private String cardOwner;
     private String expirationDate;
     private int securityCode;
+    private String review;
 
     public Customer(){
         this(null, null);
@@ -17,7 +19,7 @@ public class Customer extends User{
     public Customer(String username, String password){
         name= new SimpleStringProperty(username);
         this.password= new SimpleStringProperty(password);
-        email="email";
+        email= new SimpleStringProperty("email");
         dateOfBirth="date";
         creditCard=1112111;
         cardOwner="owner";
@@ -26,9 +28,12 @@ public class Customer extends User{
     }
 
     public void setEmail(String email){
-        this.email=email;
+        this.email.set(email);
     }
     public String getEmail(){
+        return email.getValue();
+    }
+    public StringProperty getEmailProperty(){
         return email;
     }
 
@@ -65,5 +70,12 @@ public class Customer extends User{
     }
     public void setSecurityCode(int securityCode){
         this.securityCode=securityCode;
+    }
+
+    public void setReview(String review){
+        this.review= review;
+    }
+    public String getReview(){
+        return review;
     }
 }

@@ -70,17 +70,22 @@ public class LoginController extends MainAppController{
                 errorMessage+="Employee password field is empty.\n";
             if (((Employee) user).getEmployeePassword().equals(employeePassword.getText()) == false)
                 errorMessage += "Employee password is not correct.\n";
-            else
+            else {
+                mainApp.setUser(user);
                 mainApp.showEmployeeEdit();
+            }
         }
 
 
         if(login){
             if(user instanceof Employee){
+                mainApp.setUser(user);
                 employeePassword.setVisible(true);
             }
-            else
+            else {
+                mainApp.setUser(user);
                 mainApp.showCreateAccountScreen();
+            }
         }
 
         if(errorMessage!=""){

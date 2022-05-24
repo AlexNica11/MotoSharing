@@ -14,8 +14,8 @@
       <Button layoutX="52.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleBikeInfo" text="Bike Inforamtion" />
       <Button layoutX="52.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleReservations" text="Reservations" />
       <Button layoutX="52.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleNrOfBikes" text="Number of bikes" />
-      <Button fx:id="locations" layoutX="52.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleLocations" text="Locations" />
-      <Button fx:id="employeeDetails" layoutX="52.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleEmployeeDetails" text="Employee Details" />
-      <Button layoutX="52.0" layoutY="407.0" mnemonicParsing="false" onAction="#handleRatings" text="View Ratings" />
+      <Button fx:id="locations" layoutX="52.0" layoutY="388.0" mnemonicParsing="false" onAction="#handleLocations" text="Locations" />
+      <Button fx:id="employeeDetails" layoutX="50.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleEmployeeDetails" text="Employee Details" />
+      <Button layoutX="52.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleRatings" text="View Ratings" />
    </children>
 </AnchorPane>
