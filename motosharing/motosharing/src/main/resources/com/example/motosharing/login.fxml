@@ -31,5 +31,10 @@
       <TextField fx:id="usernameField" layoutX="212.0" layoutY="155.0" prefHeight="27.0" prefWidth="254.0" promptText="Username/E-mail" />
       <TextField fx:id="passwordField" layoutX="133.0" layoutY="228.0" prefHeight="27.0" prefWidth="186.0" promptText="Password" />
       <TextField fx:id="employeePassword" layoutX="133.0" layoutY="282.0" prefHeight="27.0" prefWidth="186.0" promptText="EmployeePassword" />
+      <Button layoutX="65.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="46.0" prefWidth="98.0" text="Back">
+         <font>
+            <Font name="AppleMyungjo Regular" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

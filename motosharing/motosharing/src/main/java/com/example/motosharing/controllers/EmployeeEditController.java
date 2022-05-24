@@ -40,6 +40,10 @@ public class EmployeeEditController extends MainAppController{
     private void handleRatings(){
         mainApp.showEditOverview("ratings");
     }
+    @FXML
+    private void handleLogOut(){
+        mainApp.showLoginScreen();
+    }
 
     public void setUser(){
         user=mainApp.getUser();

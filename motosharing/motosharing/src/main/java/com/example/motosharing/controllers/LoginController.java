@@ -27,6 +27,10 @@ public class LoginController extends MainAppController{
         employeePassword.setVisible(false);
     }
     @FXML
+    private void handleBack(){
+        mainApp.showFirstScreen();
+    }
+    @FXML
     private void handleVerify(){
         User user=null;
 

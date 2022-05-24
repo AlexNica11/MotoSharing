@@ -6,6 +6,7 @@ import com.example.motosharing.data.Locations;
 import com.example.motosharing.users.Customer;
 import com.example.motosharing.users.Employee;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -34,7 +35,6 @@ public class EditDialogController extends MainAppController{
     private TextField textField4;
     @FXML
     private void handleOk(){
-        // TODO: 22/05/2022 this has to be done
         if(isInputValid()) {
             if (option.equals("locations"))
                 if (data != null) {
@@ -46,36 +46,37 @@ public class EditDialogController extends MainAppController{
                     dialogStage.close();
                 }
 
-                if (option.equals("bike info"))
-                    if (data != null) {
-                        ((Bike) data).setManufacturer(textField1.getText());
-                        ((Bike) data).setModel(textField2.getText());
-                        ((Bike) data).setColor(textField3.getText());
-                        ((Bike) data).setEngineSize(textField4.getText());
+            if (option.equals("bike info"))
+                if (data != null) {
+                    ((Bike) data).setManufacturer(textField1.getText());
+                    ((Bike) data).setModel(textField2.getText());
+                    ((Bike) data).setColor(textField3.getText());
+                    ((Bike) data).setEngineSize(textField4.getText());
 
-                        okClicked=true;
-                        dialogStage.close();
-                    }
+                    okClicked = true;
+                    dialogStage.close();
+                }
 
-                if (option.equals("employee details"))
-                    if (data != null) {
-                        ((Employee) data).setName(textField1.getText());
-                        ((Employee) data).setRank(textField2.getText());
 
-                        okClicked=true;
-                        dialogStage.close();
-                    }
+            if (option.equals("employee details"))
+                if (data != null) {
+                    ((Employee) data).setName(textField1.getText());
+                    ((Employee) data).setRank(textField2.getText());
 
-                if (option.equals("ratings"))
-                    if (data != null) {
-                        ((Customer) data).setName(textField1.getText());
-                        ((Customer) data).setEmail(textField2.getText());
-                        ((Customer) data).setReview(textField3.getText());
+                    okClicked = true;
+                    dialogStage.close();
+                }
 
-                        okClicked=true;
-                        dialogStage.close();
-                    }
 
+            if (option.equals("ratings"))
+                if (data != null) {
+                    ((Customer) data).setName(textField1.getText());
+                    ((Customer) data).setEmail(textField2.getText());
+                    ((Customer) data).setReview(textField3.getText());
+
+                    okClicked = true;
+                    dialogStage.close();
+                }
         }
     }
 
@@ -90,7 +91,6 @@ public class EditDialogController extends MainAppController{
         this.data= data;
         this.option= option;
 
-        // TODO: 23/05/2022 Not yet working
         if(option.equals("locations")) {
             if (data != null) {
                 label1.setText("City");
@@ -143,9 +143,6 @@ public class EditDialogController extends MainAppController{
                 textField4.setVisible(false);
             }
         }
-
-
-    // TODO: 22/05/2022 this has to be done
     }
 
     public void setDialogStage(Stage dialogStage){
@@ -157,8 +154,67 @@ public class EditDialogController extends MainAppController{
     }
 
     public boolean isInputValid(){
-        // TODO: 24/05/2022 isInputValid has to be done
-        return true;
+        String errorMessage= "";
+
+        if(option.equals("locations")) {
+            if(textField1.getText()==null || textField1.getText().length()==0)
+                errorMessage+="City name field is empty\n";
+            if(textField2.getText()==null || textField2.getText().length()==0)
+                errorMessage+="Street name field is empty\n";
+            if(textField3.getText()==null || textField3.getText().length()==0)
+                errorMessage+="Street number field is empty\n";
+            else {
+                try {
+                    Integer.parseInt(textField3.getText());
+                } catch (NumberFormatException e) {
+                    errorMessage += "Street number field must be a number.\n";
+                }
+            }
+        }
+        if(option.equals("bike info")){
+            if(textField1.getText()==null || textField1.getText().length()==0)
+                errorMessage+="Manufacturer field is empty\n";
+            if(textField2.getText()==null || textField2.getText().length()==0)
+                errorMessage+="Model field is empty\n";
+            if(textField3.getText()==null || textField3.getText().length()==0)
+                errorMessage+="Color field is empty\n";
+            if(textField4.getText()==null || textField4.getText().length()==0)
+                errorMessage+="Engine size field is empty\n";
+            else {
+                try {
+                    Integer.parseInt(textField4.getText());
+                } catch (NumberFormatException e) {
+                    errorMessage += "Engine size field must be a number.\n";
+                }
+            }
+        }
+        if(option.equals("employee details")){
+            if(textField1.getText()==null || textField1.getText().length()==0)
+                errorMessage+="Name field is empty\n";
+            if(textField2.getText()==null || textField2.getText().length()==0)
+                errorMessage+="Rank field is empty\n";
+        }
+        if(option.equals("ratings")){
+            if(textField1.getText()==null || textField1.getText().length()==0)
+                errorMessage+="Name field is empty\n";
+            if(textField2.getText()==null || textField2.getText().length()==0)
+                errorMessage+="Email field is empty\n";
+            if(textField3.getText()==null || textField3.getText().length()==0)
+                errorMessage+="Review field is empty\n";
+        }
+
+        if(errorMessage.length()==0)
+            return true;
+        else{
+            Alert alert= new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(dialogStage);
+            alert.setTitle("Invalid fields");
+            alert.setHeaderText("Please correct invalid fields");
+            alert.setContentText(errorMessage);
+
+            alert.showAndWait();
+            return false;
+        }
     }
 
 }
