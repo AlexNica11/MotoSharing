@@ -58,6 +58,7 @@
 
 
     <build>
+        <testSourceDirectory>src/main/tests/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
