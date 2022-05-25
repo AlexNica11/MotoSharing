@@ -11,7 +11,6 @@
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Label>
-<<<<<<< HEAD
       <Button layoutX="186.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleTimisoara" text="Timisoara">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
@@ -21,44 +20,21 @@
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font></Button>
       <Button layoutX="172.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleClujNapoca" text="Cluj-Napoca">
-=======
-      <Button layoutX="186.0" layoutY="86.0" mnemonicParsing="false" text="Timisoara">
-         <font>
-            <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Button>
-      <Button layoutX="220.0" layoutY="150.0" mnemonicParsing="false" text="Iasi">
-         <font>
-            <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Button>
-      <Button layoutX="172.0" layoutY="216.0" mnemonicParsing="false" text="Cluj-Napoca">
->>>>>>> 4306325... Rate experience use case begun
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Button>
-<<<<<<< HEAD
       <Button layoutX="182.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleBucharest" text="Bucharesti">
-=======
-      <Button layoutX="182.0" layoutY="284.0" mnemonicParsing="false" text="Bucharesti">
->>>>>>> 4306325... Rate experience use case begun
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Button>
-<<<<<<< HEAD
       <Button layoutX="202.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleBrasov" text="Brasov">
-=======
-      <Button layoutX="202.0" layoutY="353.0" mnemonicParsing="false" text="Brasov">
->>>>>>> 4306325... Rate experience use case begun
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Button>
-<<<<<<< HEAD
       <Button layoutX="186.0" layoutY="418.0" mnemonicParsing="false" onAction="#handleConstanta" text="Constanta">
-=======
-      <Button layoutX="186.0" layoutY="418.0" mnemonicParsing="false" text="Constanta">
->>>>>>> 4306325... Rate experience use case begun
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>

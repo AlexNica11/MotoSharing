@@ -1,23 +1,21 @@
 package com.example.motosharing.controllers;
 
-<<<<<<< HEAD
+
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-=======
+
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
->>>>>>> 4306325... Rate experience use case begun
 
 public class OrderBikesController extends MainAppController
 {
 
     @FXML
-<<<<<<< HEAD
+
     private ComboBox<String> type;
-=======
+
     private ComboBox<String> bikeType;
->>>>>>> 4306325... Rate experience use case begun
 
     @FXML
     private ComboBox<String> quantity;
@@ -25,7 +23,6 @@ public class OrderBikesController extends MainAppController
     @FXML
     private ComboBox<String> time;
 
-<<<<<<< HEAD
     private String[] bikeTypes= new String[10];
     private String[] nrOfBikes= new String[10];
     private String[] hours = new String[12];
@@ -34,11 +31,11 @@ public class OrderBikesController extends MainAppController
     {
         for(int i=0; i<12; i++)
         {
-            /*if(i<10)
+            if(i<10)
             {
                 bikeTypes[i] = "";
                 bikeTypes[i] += (i+1);
-            }*/
+            }
             if(i<10)
             {
                 nrOfBikes[i] = "";
@@ -97,7 +94,5 @@ public class OrderBikesController extends MainAppController
     {
         mainApp.showSelectLocationScreen();
     }
-=======
->>>>>>> 4306325... Rate experience use case begun
 
 }

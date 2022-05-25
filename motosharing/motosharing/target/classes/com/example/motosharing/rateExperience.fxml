@@ -4,18 +4,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+
 <AnchorPane prefHeight="530.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.controllers.RateExperienceController">
    <children>
-      <Label layoutX="56.0" layoutY="32.0" prefHeight="109.0" prefWidth="432.0" text="Please rate your experience ">
+      <Label layoutX="56.0" layoutY="75.0" prefHeight="109.0" prefWidth="432.0" text="Please rate your experience ">
          <font>
             <Font name="AppleMyungjo Regular" size="33.0" />
          </font>
       </Label>
+
       <Label layoutX="194.0" layoutY="141.0" text="Rating" textFill="#461c8b">
          <font>
             <Font name="AppleMyungjo Regular" size="26.0" />
          </font>
       </Label>
+
       <Button layoutX="221.0" layoutY="200.0" mnemonicParsing="false" onAction="#handle1" text="1" />
       <Button layoutX="220.0" layoutY="259.0" mnemonicParsing="false" onAction="#handle2" text="2" />
       <Button layoutX="220.0" layoutY="322.0" mnemonicParsing="false" onAction="#handle3" text="3" />

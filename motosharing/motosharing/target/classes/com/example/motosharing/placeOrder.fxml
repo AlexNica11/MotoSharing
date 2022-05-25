@@ -23,9 +23,9 @@
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font></Label>
-      <ComboBox fx:id="Type" layoutX="109.0" layoutY="146.0" prefHeight="25.0" prefWidth="79.0" />
-      <ComboBox fx:id="Quantity" layoutX="109.0" layoutY="344.0" prefHeight="25.0" prefWidth="79.0" />
-      <ComboBox fx:id="Time" layoutX="165.0" layoutY="246.0" prefHeight="25.0" prefWidth="79.0" />
+      <ComboBox fx:id="type" layoutX="109.0" layoutY="146.0" prefHeight="25.0" prefWidth="79.0" />
+      <ComboBox fx:id="quantity" layoutX="109.0" layoutY="344.0" prefHeight="25.0" prefWidth="79.0" />
+      <ComboBox fx:id="time" layoutX="165.0" layoutY="246.0" prefHeight="25.0" prefWidth="79.0" />
       <Button layoutX="324.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
          <font>
             <Font name="AppleMyungjo Regular" size="20.0" />
