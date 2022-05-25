@@ -1,19 +1,25 @@
 package com.example.motosharing.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
+//import javafx.scene.control.ComboBox;
 
 public class OrderBikesController extends MainAppController
 {
 
-    @FXML
+   /* @FXML
     private ComboBox<String> bikeType;
 
     @FXML
     private ComboBox<String> quantity;
 
     @FXML
-    private ComboBox<String> time;
+    private ComboBox<String> time;*/
+
+    @FXML
+    private void handleConfirm()
+    {
+        mainApp.showRateExperienceScreen();
+    }
 
 
 }

@@ -4,37 +4,37 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="531.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.ChooseCity">
+<AnchorPane prefHeight="531.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.controllers.SelectLocationController">
    <children>
       <Label layoutX="134.0" layoutY="32.0" prefHeight="42.0" prefWidth="255.0" text="CHOOSE YOUR CITY" underline="true" wrapText="true">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="186.0" layoutY="86.0" mnemonicParsing="false" text="Timisoara">
+      <Button layoutX="186.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleTimisoara" text="Timisoara">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font></Button>
-      <Button layoutX="220.0" layoutY="150.0" mnemonicParsing="false" text="Iasi">
+      <Button layoutX="220.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleIasi" text="Iasi">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font></Button>
-      <Button layoutX="172.0" layoutY="216.0" mnemonicParsing="false" text="Cluj-Napoca">
+      <Button layoutX="172.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleClujNapoca" text="Cluj-Napoca">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="182.0" layoutY="284.0" mnemonicParsing="false" text="Bucharesti">
+      <Button layoutX="182.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleBucharest" text="Bucharesti">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="202.0" layoutY="353.0" mnemonicParsing="false" text="Brasov">
+      <Button layoutX="202.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleBrasov" text="Brasov">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="186.0" layoutY="418.0" mnemonicParsing="false" text="Constanta">
+      <Button layoutX="186.0" layoutY="418.0" mnemonicParsing="false" onAction="#handleConstanta" text="Constanta">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
