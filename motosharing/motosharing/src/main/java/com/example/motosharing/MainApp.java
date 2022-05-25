@@ -182,6 +182,7 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+<<<<<<< HEAD
     public void showSelectLocationScreen(){
         try {
             FXMLLoader loader= new FXMLLoader();
@@ -189,8 +190,17 @@ public class MainApp extends Application {
             Pane selectLocationScreen=loader.load();
 
             rootLayout.setCenter(selectLocationScreen);
+=======
+    public void showPlaceOrderScreen(){
+        try {
+            FXMLLoader loader= new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("placeOrder.fxml"));
+            Pane orderBikesScreen=loader.load();
 
-            SelectLocationController controller= loader.getController();
+            rootLayout.setCenter(orderBikesScreen);
+>>>>>>> 4306325... Rate experience use case begun
+
+            OrderBikesController controller= loader.getController();
             controller.setMainApp(this);
 
         }catch (IOException e){

@@ -2,6 +2,7 @@ package com.example.motosharing.controllers;
 
 import javafx.fxml.FXML;
 
+<<<<<<< HEAD
 public class RateExperienceController extends MainAppController {
 
     @FXML
@@ -32,3 +33,7 @@ public class RateExperienceController extends MainAppController {
 }
 
 
+=======
+public class RateExperienceController {
+}
+>>>>>>> 4306325... Rate experience use case begun
