@@ -80,7 +80,7 @@ public class LoginController extends MainAppController{
                 employeePassword.setVisible(true);
             }
             else
-                mainApp.showPlaceOrderScreen();
+                mainApp.showSelectLocationScreen();
         }
 
         if(errorMessage!=""){
