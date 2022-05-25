@@ -23,9 +23,9 @@
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font></Label>
-      <ScrollBar layoutX="124.0" layoutY="132.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="188.0" />
-      <ScrollBar layoutX="178.0" layoutY="232.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="54.0" />
-      <ScrollBar layoutX="124.0" layoutY="330.0" orientation="VERTICAL" prefHeight="55.0" prefWidth="54.0" />
+      <ComboBox fx:id="Type" layoutX="109.0" layoutY="146.0" prefHeight="25.0" prefWidth="79.0" />
+      <ComboBox fx:id="Quantity" layoutX="109.0" layoutY="344.0" prefHeight="25.0" prefWidth="79.0" />
+      <ComboBox fx:id="Time" layoutX="165.0" layoutY="246.0" prefHeight="25.0" prefWidth="79.0" />
       <Button layoutX="324.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
          <font>
             <Font name="AppleMyungjo Regular" size="20.0" />
