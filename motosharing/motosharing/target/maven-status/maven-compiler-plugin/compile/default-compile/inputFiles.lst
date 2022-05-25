@@ -2,10 +2,13 @@ E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\ex
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\MainAppController.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\RootLayoutController.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\users\User.java
+E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\SelectLocationController.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\module-info.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\EditDialogController.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\users\Employee.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\CreateAccountController.java
+E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\OrderBikesController.java
+E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\GoodbyeController.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\LoginController.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\data\Locations.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\FirstScreenController.java
@@ -13,4 +16,5 @@ E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\ex
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\MainApp.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\data\Bike.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\EditOverviewController.java
+E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\controllers\RateExperienceController.java
 E:\Facultate\ProiectSEF\MotoSharing\motosharing\motosharing\src\main\java\com\example\motosharing\users\Customer.java
