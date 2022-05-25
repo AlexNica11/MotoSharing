@@ -4,42 +4,40 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="531.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.ChooseCity">
+<AnchorPane prefHeight="531.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.controllers.SelectLocationController">
    <children>
       <Label layoutX="134.0" layoutY="32.0" prefHeight="42.0" prefWidth="255.0" text="CHOOSE YOUR CITY" underline="true" wrapText="true">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="31.0" layoutY="93.0" text="Timisoara">
+      <Button layoutX="186.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleTimisoara" text="Timisoara">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Label>
-      <Label layoutX="31.0" layoutY="164.0" text="Iasi">
+         </font></Button>
+      <Button layoutX="220.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleIasi" text="Iasi">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Label>
-      <Label layoutX="31.0" layoutY="240.0" text="Cluj-Napoca">
+         </font></Button>
+      <Button layoutX="172.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleClujNapoca" text="Cluj-Napoca">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Label>
-      <Label layoutX="31.0" layoutY="310.0" text="Bucharest ">
+         </font>
+      </Button>
+      <Button layoutX="182.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleBucharest" text="Bucharesti">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Label>
-      <Label layoutX="36.0" layoutY="386.0" text="Brasov">
+         </font>
+      </Button>
+      <Button layoutX="202.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleBrasov" text="Brasov">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Label>
-      <Label layoutX="36.0" layoutY="456.0" text="Constanta">
+         </font>
+      </Button>
+      <Button layoutX="186.0" layoutY="418.0" mnemonicParsing="false" onAction="#handleConstanta" text="Constanta">
          <font>
             <Font name="AppleMyungjo Regular" size="24.0" />
-         </font></Label>
-      <CheckBox layoutX="237.0" layoutY="101.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="172.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="248.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="318.0" mnemonicParsing="false" />
-      <CheckBox layoutX="237.0" layoutY="394.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" />
-      <CheckBox layoutX="237.0" layoutY="464.0" mnemonicParsing="false" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

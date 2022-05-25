@@ -89,7 +89,7 @@ public class LoginController extends MainAppController{
             }
             else {
                 mainApp.setUser(user);
-                mainApp.showCreateAccountScreen();
+                mainApp.showSelectLocationScreen();
             }
         }
 

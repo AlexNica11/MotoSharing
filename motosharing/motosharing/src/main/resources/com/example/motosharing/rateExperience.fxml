@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<<<<<<< HEAD
+<AnchorPane prefHeight="530.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.controllers.RateExperienceController">
+   <children>
+      <Label layoutX="56.0" layoutY="32.0" prefHeight="109.0" prefWidth="432.0" text="Please rate your experience ">
+=======
+<AnchorPane prefHeight="530.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.motosharing.RateExperience">
+   <children>
+      <Label layoutX="56.0" layoutY="75.0" prefHeight="109.0" prefWidth="432.0" text="Please rate your experience ">
+>>>>>>> 4306325... Rate experience use case begun
+         <font>
+            <Font name="AppleMyungjo Regular" size="33.0" />
+         </font>
+      </Label>
+<<<<<<< HEAD
+      <Label layoutX="194.0" layoutY="141.0" text="Rating" textFill="#461c8b">
+=======
+      <Label layoutX="37.0" layoutY="257.0" text="Rating (1-5) ">
+>>>>>>> 4306325... Rate experience use case begun
+         <font>
+            <Font name="AppleMyungjo Regular" size="26.0" />
+         </font>
+      </Label>
+<<<<<<< HEAD
+      <Button layoutX="221.0" layoutY="200.0" mnemonicParsing="false" onAction="#handle1" text="1" />
+      <Button layoutX="220.0" layoutY="259.0" mnemonicParsing="false" onAction="#handle2" text="2" />
+      <Button layoutX="220.0" layoutY="322.0" mnemonicParsing="false" onAction="#handle3" text="3" />
+      <Button layoutX="220.0" layoutY="383.0" mnemonicParsing="false" onAction="#handle4" text="4" />
+      <Button layoutX="220.0" layoutY="447.0" mnemonicParsing="false" onAction="#handle5" text="5" />
+=======
+      <TextField layoutX="224.0" layoutY="257.0" prefHeight="37.0" prefWidth="62.0" />
+      <Button layoutX="388.0" layoutY="437.0" mnemonicParsing="false" text="Finish">
+         <font>
+            <Font name="AppleMyungjo Regular" size="21.0" />
+         </font>
+      </Button>
+>>>>>>> 4306325... Rate experience use case begun
+   </children>
+</AnchorPane>
