@@ -31,7 +31,7 @@
             <Font name="AppleMyungjo Regular" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="77.0" layoutY="444.0" mnemonicParsing="false" text="Back">
+      <Button layoutX="77.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleBack" text="Back">
          <font>
             <Font name="AppleMyungjo Regular" size="20.0" />
          </font>

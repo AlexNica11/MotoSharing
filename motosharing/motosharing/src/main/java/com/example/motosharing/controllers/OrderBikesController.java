@@ -21,5 +21,10 @@ public class OrderBikesController extends MainAppController
         mainApp.showRateExperienceScreen();
     }
 
+    @FXML
+    private void handleBack()
+    {
+        mainApp.showSelectLocationScreen();
+    }
 
 }

@@ -182,6 +182,21 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    public void showSelectLocationScreen(){
+        try {
+            FXMLLoader loader= new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("chooseCity.fxml"));
+            Pane selectLocationScreen=loader.load();
+
+            rootLayout.setCenter(selectLocationScreen);
+
+            SelectLocationController controller= loader.getController();
+            controller.setMainApp(this);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
     public void showPlaceOrderScreen(){
         try {
             FXMLLoader loader= new FXMLLoader();
