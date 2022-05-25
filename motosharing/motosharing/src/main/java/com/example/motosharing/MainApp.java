@@ -7,6 +7,7 @@ import com.example.motosharing.data.Locations;
 import com.example.motosharing.users.Customer;
 import com.example.motosharing.users.Employee;
 import com.example.motosharing.users.User;
+//import com.google.gson.JsonObject;
 import javafx.application.Application;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -19,8 +20,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
-import java.io.IOException;
+import java.io.*;
 
 public class MainApp extends Application {
 
@@ -36,7 +41,7 @@ public class MainApp extends Application {
     private ObservableList<Data> bikes=FXCollections.observableArrayList();
 
     public MainApp(){
-        Customer customer1= new Customer("u1", "p1".hashCode());
+        /*Customer customer1= new Customer("u1", "p1".hashCode());
         Customer customer2= new Customer("u2", "p2".hashCode());
         Customer customer3= new Customer("u3", "p3".hashCode());
         Customer customer4= new Customer("u4", "p4".hashCode());
@@ -47,17 +52,22 @@ public class MainApp extends Application {
         customer2.setReview("review2");
         customer3.setReview("review3");
         customer4.setReview("review4");
-        customer5.setReview("review5");
+        customer5.setReview("review5");*/
 
-        customerData.add(customer1);
+        /*customerData.add(customer1);
         customerData.add(customer2);
         customerData.add(customer3);
         customerData.add(customer4);
         customerData.add(customer5);
         customerData.add(customer6);
-        customerData.add(customer7);
+        customerData.add(customer7);*/
 
-        employeeData.add(new Employee("e1", "p1".hashCode(), "employee", "pp1".hashCode()));
+        loadCustomerDataFromFile();
+        loadEmployeeDataFromFile();
+        loadBikeDataFromFile();
+        loadLocationsDataFromFile();
+
+        /*employeeData.add(new Employee("e1", "p1".hashCode(), "employee", "pp1".hashCode()));
         employeeData.add(new Employee("e2", "p2".hashCode(), "manager", "pp2".hashCode()));
         employeeData.add(new Employee("e3", "p3".hashCode(), "employee", "pp3".hashCode()));
         employeeData.add(new Employee("e4", "p4".hashCode(), "employee", "pp4".hashCode()));
@@ -71,8 +81,8 @@ public class MainApp extends Application {
         locations.add(new Locations("c5", "s5", "sn5"));
         for (Data loc : locations){
             Locations loc1= ((Locations) loc);
-            Bike b1= new Bike("m11", "mo11", "c11", "e11");
-            b1.setLocation(loc1);
+            //Bike b1= new Bike("m11", "mo11", "c11", "e11");
+            //b1.setLocation(loc1);
             Bike b2= new Bike("m12", "mo12", "c12", "e12");
             b2.setLocation(loc1);
             Bike b3= new Bike("m13", "mo13", "c13", "e13");
@@ -89,6 +99,12 @@ public class MainApp extends Application {
 
             bikes.addAll(loc1.getBikeList());
         }
+
+        saveCustomerDataToFile();
+        saveEmployeeDataToFile();
+        saveBikeDataToFile();
+        saveLocationsDataToFile();*/
+
     }
 
     public void start(Stage primaryStage){
@@ -214,6 +230,7 @@ public class MainApp extends Application {
 
             EditDialogController controller= loader.getController();
             controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
             controller.setData(data, option);
 
             dialogStage.showAndWait();
@@ -256,7 +273,251 @@ public class MainApp extends Application {
     public User getUser(){
         return user;
     }
+    public void saveCustomerDataToFile(){
+        // TODO: 25/05/2022 Add JSON file setups
+        // TODO: 25/05/2022 2 different JSON libraries, watch out which you are using
+        JSONArray arr= new JSONArray();
+        for(Data customer : customerData){
+            JSONObject c_data= new JSONObject();
+            JSONObject c_wrapper= new JSONObject();
 
+            c_data.put("Username", ((Customer)customer).getName());
+            c_data.put("Password", ((Customer)customer).getPassword());
+            c_data.put("Email", ((Customer)customer).getEmail());
+            c_data.put("DateOfBirth", ((Customer)customer).getDateOfBirth());
+            c_data.put("CreditCardNr", ((Customer)customer).getCreditCard());
+            c_data.put("CardOwner", ((Customer)customer).getCardOwner());
+            c_data.put("ExpirationDate", ((Customer)customer).getExpirationDate());
+            c_data.put("Security Code", ((Customer)customer).getSecurityCode());
+            c_data.put("Review", ((Customer) customer).getReview());
+
+            c_wrapper.put("customer", c_data);
+
+            arr.add(c_wrapper);
+        }
+
+        try (FileWriter file = new FileWriter("customers.json")) {
+            //We can write any JSONArray or JSONObject instance to the file
+            file.write(arr.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void parseCustomerObject(JSONObject customer){
+        JSONObject customerObject= (JSONObject) customer.get("customer");
+
+        Customer cus= new Customer((String) customerObject.get("Username"), ((Long) customerObject.get("Password")).intValue());
+
+        cus.setName((String) customerObject.get("Username"));
+        cus.setPassword(((Long) customerObject.get("Password")).intValue());
+        cus.setEmail((String) customerObject.get("Email"));
+        cus.setDateOfBirth((String) customerObject.get("DateOfBirth"));
+        cus.setCreditCard(((Long) customerObject.get("CreditCardNr")).intValue());
+        cus.setCardOwner((String) customerObject.get("CardOwner"));
+        cus.setExpirationDate((String) customerObject.get("ExpirationDate"));
+        cus.setSecurityCode(((Long) customerObject.get("Security Code")).intValue());
+        cus.setReview((String) customerObject.get("Review"));
+
+        customerData.add(cus);
+    }
+    public void loadCustomerDataFromFile(){
+        JSONParser jsonParser= new JSONParser();
+        try(FileReader reader= new FileReader("customers.json")) {
+            Object obj= jsonParser.parse(reader);
+
+            JSONArray customerList= (JSONArray) obj;
+
+            customerList.forEach( cus -> parseCustomerObject( (JSONObject) cus) );
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (ParseException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void saveEmployeeDataToFile(){
+        JSONArray arr= new JSONArray();
+        for(Data employee : employeeData){
+            JSONObject e_data= new JSONObject();
+            JSONObject e_wrapper= new JSONObject();
+
+            e_data.put("Username", ((Employee)employee).getName());
+            e_data.put("Password", ((Employee)employee).getPassword());
+            e_data.put("Rank", ((Employee)employee).getRank());
+            e_data.put("EmployeePassword", ((Employee)employee).getEmployeePassword());
+
+            e_wrapper.put("employee", e_data);
+
+            arr.add(e_wrapper);
+        }
+
+        try (FileWriter file = new FileWriter("employees.json")) {
+            //We can write any JSONArray or JSONObject instance to the file
+            file.write(arr.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void parseEmployeeObject(JSONObject employee){
+        JSONObject employeeObject= (JSONObject) employee.get("employee");
+
+        Employee emp= new Employee((String) employeeObject.get("Username"), ((Long) employeeObject.get("Password")).intValue(), (String) employeeObject.get("Rank"), ((Long) employeeObject.get("EmployeePassword")).intValue());
+
+        employeeData.add(emp);
+    }
+
+    public void loadEmployeeDataFromFile(){
+        JSONParser jsonParser= new JSONParser();
+        try(FileReader reader= new FileReader("employees.json")) {
+            Object obj= jsonParser.parse(reader);
+
+            JSONArray customerList= (JSONArray) obj;
+
+            customerList.forEach( emp -> parseEmployeeObject( (JSONObject) emp) );
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (ParseException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void saveBikeDataToFile(){
+        JSONArray arr= new JSONArray();
+        for(Data bike : bikes){
+            JSONObject b_data= new JSONObject();
+            JSONObject b_wrapper= new JSONObject();
+
+            b_data.put("Manufacturer", ((Bike)bike).getManufacturer());
+            b_data.put("Model", ((Bike)bike).getModel());
+            b_data.put("Color", ((Bike)bike).getColor());
+            b_data.put("EngineSize", ((Bike)bike).getEngineSize());
+
+            b_wrapper.put("bike", b_data);
+
+            arr.add(b_wrapper);
+        }
+
+        try (FileWriter file = new FileWriter("bikes.json")) {
+            //We can write any JSONArray or JSONObject instance to the file
+            file.write(arr.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void parseBikeObject(JSONObject bike){
+        JSONObject bikeObject= (JSONObject) bike.get("bike");
+
+        Bike bike1= new Bike((String) bikeObject.get("Manufacturer"), (String) bikeObject.get("Model"), (String) bikeObject.get("Color"), (String) bikeObject.get("EngineSize"));
+
+        bikes.add(bike1);
+    }
+
+    public void loadBikeDataFromFile(){
+        JSONParser jsonParser= new JSONParser();
+        try(FileReader reader= new FileReader("bikes.json")) {
+            Object obj= jsonParser.parse(reader);
+
+            JSONArray bikeList= (JSONArray) obj;
+
+            bikeList.forEach( bike -> parseBikeObject( (JSONObject) bike) );
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (ParseException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void saveLocationsDataToFile(){
+        JSONArray arr= new JSONArray();
+        for(Data loc : locations){
+            JSONObject l_data= new JSONObject();
+            JSONObject l_wrapper= new JSONObject();
+
+            l_data.put("City", ((Locations) loc).getCity());
+            l_data.put("Street", ((Locations) loc).getStreet());
+            l_data.put("StreetNumber", ((Locations) loc).getStreetNumber());
+
+            JSONArray bikeArr= new JSONArray();
+            for(Data bike : ((Locations) loc).getBikeList()){
+                JSONObject b_data= new JSONObject();
+                JSONObject b_wrapper= new JSONObject();
+
+                b_data.put("Manufacturer", ((Bike)bike).getManufacturer());
+                b_data.put("Model", ((Bike)bike).getModel());
+                b_data.put("Color", ((Bike)bike).getColor());
+                b_data.put("EngineSize", ((Bike)bike).getEngineSize());
+
+                b_wrapper.put("bike", b_data);
+                bikeArr.add(b_wrapper);
+            }
+
+            l_data.put("Bikes", bikeArr);
+
+            l_wrapper.put("location", l_data);
+
+            arr.add(l_wrapper);
+        }
+
+        try (FileWriter file = new FileWriter("locations.json")) {
+            //We can write any JSONArray or JSONObject instance to the file
+            file.write(arr.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void parseLocationsObject(JSONObject location){
+        JSONObject locationObject= (JSONObject) location.get("location");
+
+        //Bike bike1= new Bike((String) bikeObject.get("Manufacturer"), (String) bikeObject.get("Model"), (String) bikeObject.get("Color"), (String) bikeObject.get("EngineSize"));
+
+        Locations loc= new Locations((String) locationObject.get("City"), (String) locationObject.get("Street"), (String) locationObject.get("StreetNumber"));
+
+        JSONArray locationArr=(JSONArray) locationObject.get("Bikes");
+
+        for(Object bike : locationArr){
+            JSONObject bikeObject= (JSONObject) ((JSONObject)bike).get("bike");
+
+            Bike bike1= new Bike((String) bikeObject.get("Manufacturer"), (String) bikeObject.get("Model"), (String) bikeObject.get("Color"), (String) bikeObject.get("EngineSize"));
+
+            loc.addBike(bike1);
+        }
+
+        locations.add(loc);
+    }
+
+    private void loadLocationsDataFromFile(){
+        JSONParser jsonParser= new JSONParser();
+        try(FileReader reader= new FileReader("locations.json")) {
+            Object obj= jsonParser.parse(reader);
+
+            JSONArray locationsList=(JSONArray) obj;
+
+            locationsList.forEach(loc ->parseLocationsObject((JSONObject) loc));
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (ParseException e){
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         launch();
     }

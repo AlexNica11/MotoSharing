@@ -18,8 +18,8 @@ public class Customer extends User{
     }
 
     public Customer(String username, Integer password){
-        name= new SimpleStringProperty(username);
-        this.password= new SimpleIntegerProperty(password);
+        name= new SimpleStringProperty(username==null?"username":username);
+        this.password= new SimpleIntegerProperty(password==null?1234:password);
         email= new SimpleStringProperty("email");
         dateOfBirth="date";
         creditCard=1112111;

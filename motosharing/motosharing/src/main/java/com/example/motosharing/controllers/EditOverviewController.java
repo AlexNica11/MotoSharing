@@ -164,18 +164,21 @@ public class EditOverviewController extends MainAppController{
         if(okClicked) {
             if(option.equals("locations")) {
                 mainApp.getLocations().add(tempData);
+                mainApp.saveLocationsDataToFile();
             }
             if(option.equals("bike info")) {
                 mainApp.getBikeData().add(tempData);
+                mainApp.saveBikeDataToFile();
             }
             if(option.equals("employee details")) {
                 mainApp.getEmployeeData().add(tempData);
+                mainApp.saveEmployeeDataToFile();
             }
             if(option.equals("ratings")) {
                 mainApp.getCustomerData().add(tempData);
+                mainApp.saveCustomerDataToFile();
             }
         }
-        // TODO: 22/05/2022 this implementation is only for locations, must be for all options
     }
     @FXML
     private void handleEdit(){
