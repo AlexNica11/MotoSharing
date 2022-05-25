@@ -3,11 +3,11 @@ module com.example.motosharing {
     requires javafx.fxml;
     //requires com.google.gson;
     requires json.simple;
+    requires maven.assembly.plugin;
 
     opens com.example.motosharing to javafx.fxml, com.google.gson;
     opens com.example.motosharing.controllers to javafx.fxml;
     opens com.example.motosharing.users to javafx.fxml;
-
 
     exports com.example.motosharing.controllers;
     exports com.example.motosharing;
