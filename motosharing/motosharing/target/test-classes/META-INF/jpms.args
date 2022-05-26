@@ -1,0 +1,4 @@
+--patch-module
+com.example.motosharing=_
+--add-reads
+com.example.motosharing=ALL-UNNAMED
